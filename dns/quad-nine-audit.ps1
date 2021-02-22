@@ -1,0 +1,2 @@
+Import-Module $env:SyncroModule
+if (Resolve-DnsName isitblocked.org -type A | Where-Object {$_.IPAddress -like "*.*.*.*"} | Select-Object -Property IPAddress) { Rmm-Alert -Category 'DNS Filtering' -Body 'Failed QUAD9 DNS malware filtering audit' }

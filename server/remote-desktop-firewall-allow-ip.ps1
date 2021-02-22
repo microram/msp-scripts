@@ -1,0 +1,2 @@
+# Add Allow rule for a single IP address to Remote Desktop service
+New-NetFirewallRule -DisplayName "CUSTOM RDP" -RemoteAddress "111.222.333.444" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Allow
