@@ -1,7 +1,7 @@
 # Create a Syncro RMMAlert when a backup fails, set Backup Status to latest message. 
-# Req Asset custom field "Backup Status". Must be run daily as the event log search is limited to 1 day back.
+# Req Asset custom field "Backup Status".
 # Optional pass in $prev_status platform variable from {asset_custom_field_backup_status}
-# Optional pass in $num_days runtime variable to allow a few days between backups for some machines. Default 4 days
+# Optional pass in $num_days runtime variable to allow a few days between backups for some machines. Default 5 days
 
 if (Test-Path variable:$num_days) { $num_days = -5 }
 if ($num_days -gt 0) { $num_days *= -1 }
